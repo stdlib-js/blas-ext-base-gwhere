@@ -41,38 +41,32 @@ limitations under the License.
 
 <!-- /.intro -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-gwhere
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-gwhere = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gwhere@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var gwhere = require( 'path/to/vendor/umd/blas-ext-base-gwhere/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gwhere@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.gwhere;
-})();
-</script>
+var gwhere = require( '@stdlib/blas-ext-base-gwhere' );
 ```
 
 #### gwhere( N, condition, strideC, x, strideX, y, strideY, out, strideOut )
@@ -195,16 +189,11 @@ gwhere.ndarray( 3, condition, 2, 1, x, 2, 1, y, 2, 1, out, 1, 0 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-bernoulli@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-array-discrete-uniform@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zeros@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gwhere@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var bernoulli = require( '@stdlib/random-array-bernoulli' );
+var discreteUniform = require( '@stdlib/random-array-discrete-uniform' );
+var zeros = require( '@stdlib/array-base-zeros' );
+var gwhere = require( '@stdlib/blas-ext-base-gwhere' );
 
 var condition = bernoulli( 20, 0.5, {
     'dtype': 'generic'
@@ -224,11 +213,6 @@ console.log( out );
 
 gwhere( condition.length, condition, 1, x, 1, y, 1, out, 1 );
 console.log( out );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -319,11 +303,11 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor/tree/umd
+[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor
 
-[@stdlib/blas/ext/base/dwhere]: https://github.com/stdlib-js/blas-ext-base-dwhere/tree/umd
+[@stdlib/blas/ext/base/dwhere]: https://github.com/stdlib-js/blas-ext-base-dwhere
 
-[@stdlib/blas/ext/base/swhere]: https://github.com/stdlib-js/blas-ext-base-swhere/tree/umd
+[@stdlib/blas/ext/base/swhere]: https://github.com/stdlib-js/blas-ext-base-swhere
 
 </section>
 
